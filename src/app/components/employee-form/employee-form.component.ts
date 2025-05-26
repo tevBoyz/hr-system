@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './employee-form.component.html'
 })
 export class EmployeeFormComponent implements OnInit {
-  employee: Employee = { id: 0, firstName: '', lastName: '', email: '', phone: '', resumeUrl: '' ,companyId: 0};
+  employee: Employee = { id: 0, firstName: '', lastName: '', email: '', phone: '', resumeUrl: '' ,companyId: 0, departmentId: 0, salaryID: 0 };
   isEdit = false;
 
   constructor(

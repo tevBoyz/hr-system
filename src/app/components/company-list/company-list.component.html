@@ -4,6 +4,11 @@
     Add Company
   </button>
   <table mat-table [dataSource]="companies" class="mat-elevation-z8 candTable">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
       <td mat-cell *matCellDef="let element">{{ element.name }}</td>
@@ -36,13 +41,19 @@
 
     <tr
       mat-header-row
-      *matHeaderRowDef="['name', 'location', 'establishedYear', 'actions']"
+      *matHeaderRowDef="[
+        'id',
+        'name',
+        'location',
+        'establishedYear',
+        'actions'
+      ]"
     ></tr>
     <tr
       mat-row
       *matRowDef="
         let row;
-        columns: ['name', 'location', 'establishedYear', 'actions']
+        columns: ['id', 'name', 'location', 'establishedYear', 'actions']
       "
     ></tr>
   </table>
