@@ -29,3 +29,18 @@ th.mat-header-cell {
   border-inline-end: 1px solid #5f5a5a;
   padding-left: 0.5rem !important;
 }
+
+.btns {
+  background-color: #282828;
+  color: #fff;
+}
+
+.btns:hover {
+  background-color: #7b1fa2;
+  color: #fff;
+}
+
+.active {
+  background-color: #7b1fa2 !important;
+  color: #fff;
+}

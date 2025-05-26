@@ -1,18 +1,12 @@
-.nav-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: lightgray;
-  cursor: pointer;
-}
-
-button.active {
-  background-color: dodgerblue;
+::ng-deep .toggle-group .mat-button-toggle {
+  background-color: #282828 !important;
   color: white;
-  font-weight: bold;
+  border: none;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+::ng-deep .toggle-group .mat-button-toggle-checked {
+  background-color: #7b1fa2 !important;
+  color: white;
 }

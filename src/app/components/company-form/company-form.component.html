@@ -1,0 +1,36 @@
+<mat-card
+  ><form #companyForm="ngForm" (ngSubmit)="onSubmit(companyForm)" novalidate>
+    <!-- Inputs with [(ngModel)] + required -->
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Name"
+        [(ngModel)]="company.name"
+        name="name"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Location"
+        [(ngModel)]="company.location"
+        name="location"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Established Year"
+        [(ngModel)]="company.establishedYear"
+        name="establishedYear"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</mat-card>

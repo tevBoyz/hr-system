@@ -1,21 +1,46 @@
-<!-- <link rel="stylesheet" href="home.component.css" /> -->
-
-<div class="nav-buttons">
-  <button
-    class="mat-button-wrapper"
-    [class.active]="router.url.startsWith('/candidates')"
-    routerLink="/candidates"
+<mat-toolbar>
+  <mat-button-toggle-group
+    [value]="getActiveSection()"
+    appearance="legacy"
+    class="toggle-group"
   >
-    Candidates
-  </button>
-  <button
-    class="mat-button-wrapper"
-    [class.active]="router.url.startsWith('/employees')"
-    routerLink="/employees"
-  >
-    Employees
-  </button>
-</div>
+    <mat-button-toggle
+      value="candidates"
+      class="btns"
+      [routerLink]="['/candidates']"
+    >
+      Candidates
+    </mat-button-toggle>
+    <mat-button-toggle
+      value="employees"
+      class="btns"
+      [routerLink]="['/employees']"
+    >
+      Employees
+    </mat-button-toggle>
+    <mat-button-toggle
+      value="companies"
+      class="btns"
+      [routerLink]="['/companies']"
+    >
+      Companies
+    </mat-button-toggle>
+    <mat-button-toggle
+      value="departments"
+      class="btns"
+      [routerLink]="['/departments']"
+    >
+      Departments
+    </mat-button-toggle>
+    <mat-button-toggle
+      value="salaries"
+      class="btns"
+      [routerLink]="['/salaries']"
+    >
+      Salaries
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-toolbar>
 
 <div class="content">
   <router-outlet></router-outlet>

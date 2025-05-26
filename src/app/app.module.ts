@@ -17,6 +17,12 @@ import { CandidateFormComponent } from './components/candidate-form/candidate-fo
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { HomeComponent } from './components/home/home.component';
+import { CompanyListComponent } from './components/company-list/company-list.component';
+import { CompanyFormComponent } from './components/company-form/company-form.component';
+import { DepartmentFormComponent } from './components/department-form/department-form.component';
+import { DepartmentListComponent } from './components/department-list/department-list.component';
+import { SalaryListComponent } from './components/salary-list/salary-list.component';
+import { SalaryFormComponent } from './components/salary-form/salary-form.component';
 
 
 @NgModule({
@@ -26,7 +32,13 @@ import { HomeComponent } from './components/home/home.component';
     CandidateFormComponent,
     EmployeeFormComponent,
     EmployeeListComponent,
-    HomeComponent
+    HomeComponent,
+    CompanyListComponent,
+    CompanyFormComponent,
+    DepartmentFormComponent,
+    DepartmentListComponent,
+    SalaryListComponent,
+    SalaryFormComponent
   ],
   imports: [
     BrowserModule,

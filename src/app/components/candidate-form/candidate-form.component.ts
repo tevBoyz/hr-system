@@ -41,5 +41,3 @@ export class CandidateFormComponent implements OnInit {
   request.subscribe(() => this.router.navigate(['/candidates']));}
 }
 }
-
-

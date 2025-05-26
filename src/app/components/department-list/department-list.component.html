@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-title>Departments</mat-card-title>
+  <button mat-raised-button color="primary" [routerLink]="['/departments/add']">
+    Add Department
+  </button>
+  <table
+    mat-table
+    [dataSource]="departments"
+    class="mat-elevation-z8 candTable"
+  >
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="companyID">
+      <th mat-header-cell *matHeaderCellDef>Company ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.companyID }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-button
+          color="accent"
+          [routerLink]="['/departments/edit', element.id]"
+        >
+          Edit
+        </button>
+        <button mat-button color="warn" (click)="deleteDepartment(element.id)">
+          Delete
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['name', 'companyID', 'actions']"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: ['name', 'companyID', 'actions']"
+    ></tr>
+  </table>
+</mat-card>

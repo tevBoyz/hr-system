@@ -1,0 +1,30 @@
+<mat-card
+  ><form
+    #departmentForm="ngForm"
+    (ngSubmit)="onSubmit(departmentForm)"
+    novalidate
+  >
+    <!-- Inputs with [(ngModel)] + required -->
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Name"
+        [(ngModel)]="department.name"
+        name="name"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Company ID"
+        [(ngModel)]="department.companyID"
+        name="companyID"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</mat-card>

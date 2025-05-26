@@ -1,0 +1,37 @@
+<mat-card
+  ><form #salaryForm="ngForm" (ngSubmit)="onSubmit(salaryForm)" novalidate>
+    <!-- Inputs with [(ngModel)] + required -->
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Grade"
+        [(ngModel)]="salary.grade"
+        name="grade"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Amount"
+        [(ngModel)]="salary.amount"
+        name="amount"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Currency"
+        [(ngModel)]="salary.currency"
+        name="currency"
+        required
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</mat-card>
