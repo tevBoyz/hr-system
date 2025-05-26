@@ -1,16 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from 'src/shared/material.module';
+import { FormsModule } from '@angular/forms';
+
+import { InMemoryDataService } from './in-memory-data.service';
+import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
+import { CandidateFormComponent } from './components/candidate-form/candidate-form.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CandidateListComponent,
+    CandidateFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MaterialModule,
+    FormsModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })
   ],
   providers: [],
   bootstrap: [AppComponent]

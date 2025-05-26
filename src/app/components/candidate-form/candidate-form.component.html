@@ -1,0 +1,52 @@
+<mat-card>
+  <mat-card-title>{{
+    isEdit ? "Edit Candidate" : "Add Candidate"
+  }}</mat-card-title>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="First Name"
+        [(ngModel)]="candidate.firstName"
+        name="firstName"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Last Name"
+        [(ngModel)]="candidate.lastName"
+        name="lastName"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Email"
+        [(ngModel)]="candidate.email"
+        name="email"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Phone"
+        [(ngModel)]="candidate.phone"
+        name="phone"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Resume URL"
+        [(ngModel)]="candidate.resumeUrl"
+        name="resumeUrl"
+      />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</mat-card>

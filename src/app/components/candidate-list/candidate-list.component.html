@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-title>Candidate List</mat-card-title>
+  <button mat-raised-button color="primary" [routerLink]="['/candidates/add']">
+    Add Candidate
+  </button>
+  <table mat-table [dataSource]="candidates" class="mat-elevation-z8">
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>Last Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.lastname }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-button
+          color="accent"
+          [routerLink]="['/candidates/edit', element.id]"
+        >
+          Edit
+        </button>
+        <button mat-button color="warn" (click)="deleteCandidate(element.id)">
+          Delete
+        </button>
+      </td>
+    </ng-container>
+
+    <tr
+      mat-header-row
+      *matHeaderRowDef="['firstName', 'lastName', 'email', 'actions']"
+    ></tr>
+    <tr
+      mat-row
+      *matRowDef="
+        let row;
+        columns: ['firstName', 'lastName', 'email', 'actions']
+      "
+    ></tr>
+  </table>
+</mat-card>
