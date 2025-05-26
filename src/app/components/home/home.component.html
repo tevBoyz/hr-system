@@ -1,0 +1,22 @@
+<!-- <link rel="stylesheet" href="home.component.css" /> -->
+
+<div class="nav-buttons">
+  <button
+    class="mat-button-wrapper"
+    [class.active]="router.url.startsWith('/candidates')"
+    routerLink="/candidates"
+  >
+    Candidates
+  </button>
+  <button
+    class="mat-button-wrapper"
+    [class.active]="router.url.startsWith('/employees')"
+    routerLink="/employees"
+  >
+    Employees
+  </button>
+</div>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

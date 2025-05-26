@@ -10,8 +10,22 @@ body {
 }
 .mat-form-field-wrapper {
   margin-right: 70px;
-  width: ;
 }
 .mat-input-element {
   font-size: 1rem !important;
+}
+.full-width-table {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+  vertical-align: middle;
+}
+.candTable {
+  width: 100%;
+}
+th.mat-header-cell {
+  border-inline-end: 1px solid #5f5a5a;
+  padding-left: 0.5rem !important;
 }

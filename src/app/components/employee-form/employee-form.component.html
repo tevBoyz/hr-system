@@ -1,16 +1,12 @@
 <mat-card
-  ><form
-    #candidateForm="ngForm"
-    (ngSubmit)="onSubmit(candidateForm)"
-    novalidate
-  >
+  ><form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)" novalidate>
     <!-- Inputs with [(ngModel)] + required -->
 
     <mat-form-field>
       <input
         matInput
         placeholder="First Name"
-        [(ngModel)]="candidate.firstName"
+        [(ngModel)]="employee.firstName"
         name="firstName"
         required
       />
@@ -20,7 +16,7 @@
       <input
         matInput
         placeholder="Last Name"
-        [(ngModel)]="candidate.lastName"
+        [(ngModel)]="employee.lastName"
         name="lastName"
         required
       />
@@ -30,7 +26,7 @@
       <input
         matInput
         placeholder="Email"
-        [(ngModel)]="candidate.email"
+        [(ngModel)]="employee.email"
         name="email"
         required
       />
@@ -40,7 +36,7 @@
       <input
         matInput
         placeholder="Phone"
-        [(ngModel)]="candidate.phone"
+        [(ngModel)]="employee.phone"
         name="phone"
         required
       />
@@ -49,8 +45,17 @@
     <mat-form-field>
       <input
         matInput
+        placeholder="company ID"
+        [(ngModel)]="employee.companyId"
+        name="companyId"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
         placeholder="Resume URL"
-        [(ngModel)]="candidate.resumeUrl"
+        [(ngModel)]="employee.resumeUrl"
         name="resumeUrl"
       />
     </mat-form-field>

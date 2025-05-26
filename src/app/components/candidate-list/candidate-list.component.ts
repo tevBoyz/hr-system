@@ -20,6 +20,9 @@ export class CandidateListComponent implements OnInit {
   }
 
   deleteCandidate(id: number) {
-    this.candidateService.deleteCandidate(id).subscribe(() => this.loadCandidates());
+    const confirm = window.confirm("Are you sure?");
+    if(confirm){
+      this.candidateService.deleteCandidate(id).subscribe(() => this.loadCandidates());
+    }
   }
 }

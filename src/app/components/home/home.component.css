@@ -1,0 +1,18 @@
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+button.active {
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bold;
+}

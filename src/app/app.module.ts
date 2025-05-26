@@ -8,17 +8,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from 'src/shared/material.module';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 import { InMemoryDataService } from './in-memory-data.service';
 import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
 import { CandidateFormComponent } from './components/candidate-form/candidate-form.component';
+import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CandidateListComponent,
-    CandidateFormComponent
+    CandidateFormComponent,
+    EmployeeFormComponent,
+    EmployeeListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +35,7 @@ import { CandidateFormComponent } from './components/candidate-form/candidate-fo
     HttpClientModule,
     MaterialModule,
     FormsModule,
+    MatSnackBarModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })
   ],
   providers: [],
