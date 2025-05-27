@@ -1,8 +1,10 @@
 <mat-card>
-  <mat-card-title>Employees</mat-card-title>
-  <button mat-raised-button color="primary" [routerLink]="['/employees/add']">
-    Add Employee
-  </button>
+  <div class="top-bar">
+    <mat-card-title>Employee DB</mat-card-title>
+    <button mat-raised-button color="primary" [routerLink]="['/employees/add']">
+      Add Employee
+    </button>
+  </div>
   <table mat-table [dataSource]="employees" class="mat-elevation-z8 candTable">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>ID</th>

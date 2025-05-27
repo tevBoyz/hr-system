@@ -7,6 +7,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: accent;
 }
 .mat-form-field-wrapper {
   margin-right: 70px;
@@ -51,4 +52,23 @@ th.cdk-column-actions {
 .active {
   background-color: #7b1fa2 !important;
   color: #fff;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+
+.cancel-btn {
+  margin: 1rem !important;
+}
+
+.home-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
 }

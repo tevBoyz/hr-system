@@ -1,12 +1,33 @@
-::ng-deep .toggle-group .mat-button-toggle {
-  background-color: #282828 !important;
-  color: white;
-  border: none;
-  margin-right: 8px;
-  border-radius: 4px;
+.home-toolbar {
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-::ng-deep .toggle-group .mat-button-toggle-checked {
-  background-color: #7b1fa2 !important;
+.home-nav-card {
+  margin: 16px;
+  padding: 12px;
+  background-color: #424242; /* For dark theme */
   color: white;
+}
+
+.toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btns {
+  color: white;
+  font-weight: 500;
+}
+
+.content {
+  padding: 16px;
+}
+
+::ng-deep .mat-button-toggle-checked {
+  background-color: #7b1fa2 !important; /* Primary color from Angular Material */
+  color: white !important;
 }

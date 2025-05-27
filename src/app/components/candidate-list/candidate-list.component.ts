@@ -11,6 +11,7 @@ import { DepartmentService } from 'src/app/services/department-service.service';
 export class CandidateListComponent implements OnInit {
   candidates: Candidate[] = [];
   departments: Department[] = [];
+  
   departmentsLoaded: boolean = false;
   constructor(private candidateService: CandidateService, private departmentService: DepartmentService) {}
 

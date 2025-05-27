@@ -1,46 +1,39 @@
-<mat-toolbar>
+<mat-toolbar color="primary" class="home-toolbar">
+  <span class="toolbar-title">HR Management System</span>
+</mat-toolbar>
+
+<mat-card class="home-nav-card">
   <mat-button-toggle-group
     [value]="getActiveSection()"
-    appearance="legacy"
+    appearance="standard"
     class="toggle-group"
   >
-    <mat-button-toggle
-      value="candidates"
-      class="btns"
-      [routerLink]="['/candidates']"
-    >
-      Candidates
+    <mat-button-toggle value="candidates" [routerLink]="['/candidates']">
+      <mat-icon>person</mat-icon>
+      &nbsp;Candidates
     </mat-button-toggle>
-    <mat-button-toggle
-      value="employees"
-      class="btns"
-      [routerLink]="['/employees']"
-    >
-      Employees
+
+    <mat-button-toggle value="employees" [routerLink]="['/employees']">
+      <mat-icon>badge</mat-icon>
+      &nbsp;Employees
     </mat-button-toggle>
-    <mat-button-toggle
-      value="companies"
-      class="btns"
-      [routerLink]="['/companies']"
-    >
-      Companies
+
+    <mat-button-toggle value="companies" [routerLink]="['/companies']">
+      <mat-icon>business</mat-icon>
+      &nbsp;Companies
     </mat-button-toggle>
-    <mat-button-toggle
-      value="departments"
-      class="btns"
-      [routerLink]="['/departments']"
-    >
-      Departments
+
+    <mat-button-toggle value="departments" [routerLink]="['/departments']">
+      <mat-icon>domain</mat-icon>
+      &nbsp;Departments
     </mat-button-toggle>
-    <mat-button-toggle
-      value="salaries"
-      class="btns"
-      [routerLink]="['/salaries']"
-    >
-      Salaries
+
+    <mat-button-toggle value="salaries" [routerLink]="['/salaries']">
+      <mat-icon>attach_money</mat-icon>
+      &nbsp;Salaries
     </mat-button-toggle>
   </mat-button-toggle-group>
-</mat-toolbar>
+</mat-card>
 
 <div class="content">
   <router-outlet></router-outlet>

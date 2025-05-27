@@ -1,8 +1,14 @@
 <mat-card>
-  <mat-card-title>Departments</mat-card-title>
-  <button mat-raised-button color="primary" [routerLink]="['/departments/add']">
-    Add Department
-  </button>
+  <div class="top-bar">
+    <mat-card-title>Department DB</mat-card-title>
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/departments/add']"
+    >
+      Add Department
+    </button>
+  </div>
   <table
     mat-table
     [dataSource]="departments"
