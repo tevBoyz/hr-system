@@ -6,9 +6,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'; // Optional if using icons
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 @NgModule({
-  exports: [MatInputModule, MatCardModule, MatTableModule, MatButtonModule,MatToolbarModule, MatButtonToggleModule,MatIconModule  ]
+  exports: [MatSelectModule, MatInputModule, MatCardModule, MatTableModule, MatButtonModule,MatToolbarModule, MatButtonToggleModule,MatIconModule  ]
 })
 export class MaterialModule {}

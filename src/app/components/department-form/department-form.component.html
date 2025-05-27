@@ -16,13 +16,13 @@
       />
     </mat-form-field>
 
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Company ID"
-        [(ngModel)]="department.companyID"
-        name="companyID"
-      />
+    <mat-form-field appearance="fill">
+      <mat-label>Company</mat-label>
+      <mat-select [(ngModel)]="department.companyId" name="companyId">
+        <mat-option *ngFor="let company of companies" [value]="company.id">
+          {{ company.name }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <button mat-raised-button color="primary" type="submit">Save</button>

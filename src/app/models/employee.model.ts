@@ -7,5 +7,5 @@ export interface Employee {
   resumeUrl: string;
   companyId: number; // Linked to the company this employee works for
   departmentId: number; // Linked to the department this employee belongs to
-  salaryID: number; // Linked to the salary this employee receives
+  salaryId: number; // Linked to the salary this employee receives
 }

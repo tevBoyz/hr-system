@@ -35,26 +35,10 @@ export class InMemoryDataService implements InMemoryDbService {
     return { candidates, employees, companies, departments, salaries };
   }
 
-  // genId(candidates: Candidate[]): number {
-  //   return candidates.length > 0 ? Math.max(...candidates.map(c => c.id)) + 1 : 1;
-  // }
+ 
   genId<T extends { id: number }>(collection: T[]): number {
   return collection.length > 0 ? Math.max(...collection.map(item => item.id)) + 1 : 1;
 }
-
-  
-  // Optional: intercept POST, PUT, DELETE to sync with localStorage
-  // responseInterceptor(resOptions: ResponseOptions, reqInfo: RequestInfo): ResponseOptions {
-  // const collectionName = reqInfo.collectionName;
-
-  // if (collectionName === 'candidates') {
-  //   const candidates = reqInfo.utils.getDb()['candidates'];
-
-  //   // ✅ Fix here: use reqInfo.method instead of reqInfo.req.method
-  //   if (['post', 'put', 'delete'].includes(reqInfo.method.toLowerCase())) {
-  //     localStorage.setItem('candidates', JSON.stringify(candidates));
-  //   }
-  // }
 
 responseInterceptor(resOptions: ResponseOptions, reqInfo: RequestInfo): ResponseOptions {
   const collectionName = reqInfo.collectionName;

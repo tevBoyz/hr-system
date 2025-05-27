@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CandidateService } from '../../services/candidate-service.service';
 import { Candidate } from '../../models/candidate.model';
+import { Department } from 'src/app/models/department.model';
+import { DepartmentService } from 'src/app/services/department-service.service';
 
 @Component({
   selector: 'app-candidate-list',
@@ -8,11 +10,25 @@ import { Candidate } from '../../models/candidate.model';
 })
 export class CandidateListComponent implements OnInit {
   candidates: Candidate[] = [];
+  departments: Department[] = [];
+  departmentsLoaded: boolean = false;
+  constructor(private candidateService: CandidateService, private departmentService: DepartmentService) {}
 
-  constructor(private candidateService: CandidateService) {}
+
 
   ngOnInit() {
     this.loadCandidates();
+    this.departmentService.getDepartments().subscribe(data => this.departments = data);
+    this.departmentsLoaded = true
+  }
+
+  getDepartmentName(id: number){
+    if (!this.departments || this.departments.length === 0) {
+    return 'Loading...'; // or ''
+  }
+
+  const dept = this.departments.find(d => d.id === +id);
+  return dept ? dept.name : 'Unknown';
   }
 
   loadCandidates() {

@@ -42,30 +42,31 @@
       />
     </mat-form-field>
 
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="company ID"
-        [(ngModel)]="employee.companyId"
-        name="companyId"
-      />
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Department ID"
-        [(ngModel)]="employee.departmentID"
-        name="departmentID"
-      />
+    <mat-form-field appearance="fill">
+      <mat-label>Company</mat-label>
+      <mat-select [(ngModel)]="employee.companyId" name="companyId">
+        <mat-option *ngFor="let company of companies" [value]="company.id">
+          {{ company.name }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Salary ID"
-        [(ngModel)]="employee.salaryID"
-        name="salaryID"
-      />
+    <mat-form-field appearance="fill">
+      <mat-label>Department</mat-label>
+      <mat-select [(ngModel)]="employee.departmentId" name="departmentId">
+        <mat-option *ngFor="let dept of departments" [value]="dept.id">
+          {{ dept.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Salary</mat-label>
+      <mat-select [(ngModel)]="employee.salaryId" name="salaryId">
+        <mat-option *ngFor="let salary of salaries" [value]="salary.id">
+          {{ salary.amount }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field>

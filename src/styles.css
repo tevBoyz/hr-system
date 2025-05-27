@@ -29,6 +29,14 @@ th.mat-header-cell {
   border-inline-end: 1px solid #5f5a5a;
   padding-left: 0.5rem !important;
 }
+td.mat-cell {
+  border-inline-end: 1px solid #5f5a5a;
+  padding-left: 0.5rem !important;
+}
+td.mat-column-actions,
+th.cdk-column-actions {
+  text-align: center !important;
+}
 
 .btns {
   background-color: #282828;

@@ -5,4 +5,5 @@ export interface Candidate {
   email: string;
   phone: string;
   resumeUrl: string;
+  departmentId: number; //  tode: add this to DB structure
 }

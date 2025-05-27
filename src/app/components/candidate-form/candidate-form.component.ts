@@ -3,28 +3,37 @@ import { CandidateService } from '../../services/candidate-service.service';
 import { Candidate } from '../../models/candidate.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Department } from 'src/app/models/department.model';
+import { DepartmentService } from 'src/app/services/department-service.service';
 
 @Component({
   selector: 'app-candidate-form',
   templateUrl: './candidate-form.component.html'
 })
 export class CandidateFormComponent implements OnInit {
-  candidate: Candidate = { id: 0, firstName: '', lastName: '', email: '', phone: '', resumeUrl: '' };
+  candidate: Candidate = { id: 0, firstName: '', lastName: '', email: '',departmentId: 0, phone: '', resumeUrl: '' };
+  departments: Department[] = [];
   isEdit = false;
 
   constructor(
     private service: CandidateService,
     private route: ActivatedRoute,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private departmentService: DepartmentService
   ) {}
 
   ngOnInit() {
+    this.loadDepartments();
     const id = this.route.snapshot.params['id'];
     if (id) {
       this.isEdit = true;
       this.service.getCandidate(+id).subscribe(data => this.candidate = data);
     }
+  }
+
+  loadDepartments() {
+    this.departmentService.getDepartments().subscribe(data => this.departments = data);
   }
   
   onSubmit() {

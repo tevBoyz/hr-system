@@ -22,14 +22,25 @@
       <td mat-cell *matCellDef="let element">{{ element.email }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="departmentID">
-      <th mat-header-cell *matHeaderCellDef>Department ID</th>
-      <td mat-cell *matCellDef="let element">{{ element.departmentID }}</td>
+    <ng-container matColumnDef="companyId">
+      <th mat-header-cell *matHeaderCellDef>Company</th>
+      <td mat-cell *matCellDef="let element">
+        {{ getCompanyName(element.companyId) }}
+      </td>
     </ng-container>
 
-    <ng-container matColumnDef="salaryID">
-      <th mat-header-cell *matHeaderCellDef>Salary ID</th>
-      <td mat-cell *matCellDef="let element">{{ element.salaryID }}</td>
+    <ng-container matColumnDef="departmentId">
+      <th mat-header-cell *matHeaderCellDef>Department</th>
+      <td mat-cell *matCellDef="let element">
+        {{ getDepartmentName(element.departmentId) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="salaryId">
+      <th mat-header-cell *matHeaderCellDef>Salary</th>
+      <td mat-cell *matCellDef="let element">
+        {{ getSalaryAmount(element.salaryID) }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -55,8 +66,9 @@
         'firstName',
         'lastName',
         'email',
-        'departmentID',
-        'salaryID',
+        'companyId',
+        'departmentId',
+        'salaryId',
         'actions'
       ]"
     ></tr>
@@ -69,8 +81,9 @@
           'firstName',
           'lastName',
           'email',
-          'departmentID',
-          'salaryID',
+          'companyId',
+          'departmentId',
+          'salaryId',
           'actions'
         ]
       "
